@@ -1,0 +1,40 @@
+{
+  "name": "react-boilerplate",
+  "version": "1.0.0",
+  "main": "index.tsx",
+  "author": "daeddy",
+  "license": "MIT",
+  "scripts": {
+    "start": "cross-env webpack serve --open",
+    "build": "cross-env webpack",
+    "lint": "eslint --ext ts,tsx .",
+    "test": "jest"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^4.7.4"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,css,md,graphql}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.{ts,tsx}": "eslint --cache --fix"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.14",
+    "@types/react-dom": "^18.0.5",
+    "@typescript-eslint/eslint-plugin": "^5.30.3",
+    "@typescript-eslint/parser": "^5.30.3",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.19.0",
+    "eslint-plugin-react": "^7.30.1",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "html-webpack-plugin": "^5.5.0",
+    "lint-staged": "^13.0.3",
+    "ts-loader": "^9.3.1",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.9.3"
+  }
+}
