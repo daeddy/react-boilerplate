@@ -1,18 +1,17 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable no-undef */
-const path = require("path");
+
 // plugins
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
+const APP_TITLE = "react-boilerplate"
+
 module.exports = {
-  mode: process.env.NODE_ENV || "development",
+  mode: "development",
   entry: "./src/index.tsx",
-  output: {
-    path: path.join(__dirname, "build"),
-    filename: "[name].[contenthash].bundle.js",
-    publicPath: "/",
-    clean: true,
-  }, 
+  devServer: {
+    static: './dist',
+  },
   module: {
     rules: [
       {
@@ -24,9 +23,12 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "Tanslation Manager",
+      title: APP_TITLE,
       template: "public/index.html",
       favicon: "public/favicon.ico",
     }),
   ],
+  optimization: {
+    runtimeChunk: 'single',
+  },
 };
